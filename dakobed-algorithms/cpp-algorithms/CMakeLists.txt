@@ -3,4 +3,4 @@ project(cpp_algorithms)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cpp_algorithms main.cpp arrays/Solution.cpp arrays/Solution.h)
+add_executable(cpp_algorithms main.cpp arrays/Solution.cpp arrays/Solution.h 2darrays/Solution.cpp 2darrays/Solution.h)
