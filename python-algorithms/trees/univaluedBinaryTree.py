@@ -13,13 +13,7 @@ class Solution:
                 return 0
             left = dfs(node.left)
             right = dfs(node.right)
-            leftCheck = rightCheck = 0
-            if node.left and node.left.val == node.val:
-                leftCheck = left + 1
-            if node.right and node.right.val == node.val:
-                rightCheck = right + 1
-            self.result = max(self.result, leftCheck + rightCheck)
-            return max(leftCheck, rightCheck)
+
         dfs(root)
         return self.result
 
@@ -44,26 +38,11 @@ class Solution:
 
 root = TreeNode(1)
 root.left = TreeNode(4)
-root.right = TreeNode(1)
+root.left.left = TreeNode(4)
+root.left.left.left = TreeNode(4)
+root.left.left.right = TreeNode(1)
 root.left.right = TreeNode(4)
-root.left.right.right = TreeNode(4)
-root.left.right.left = TreeNode(4)
-root.left.right.left.left = TreeNode(4)
-root.left.right.left.left.left = TreeNode(1)
+root.left.right.right = TreeNode(1)
+
 solution = Solution()
-# solution.isUnivalTree(root)
-
 solution.longestUnivaluePath(root)
-
-
-
-
-# solution = Solution()
-# root = TreeNode(1)
-# root.right = TreeNode(5)
-# root.right.right = TreeNode(5)
-#
-# root.left = TreeNode(4)
-# root.left.right = TreeNode(4)
-# root.left.left = TreeNode(4)
-# solution.longestUnivaluePath(root)

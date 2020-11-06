@@ -1,11 +1,10 @@
 class Solution:
     def findMaxConsecutiveOnes(self, nums):
-        count = 0
-        maxCount = 0
-        for num in nums:
-            count = 0 if num ==0 else count +1
-            maxCount = max(maxCount, count)
-        return maxCount
+        number = []
+        while head:
+            number.append(head.val)
+            head = head.next
+        return sum([(2 ** i) for i in range(len(number[::-1])) if number[i] == 1])
 
 
 
